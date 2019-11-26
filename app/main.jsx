@@ -129,23 +129,23 @@ class App extends React.Component {
 
 
                     <div className="container">
-                      <div class="row">
-                          <div class="col-sm-3">
+                      <div className="row">
+                          <div className="col-sm-3">
                             One of three columns
                           </div>
 
-                          <div class="col-sm-9">
+                          <div className="col-sm-9">
 
-                            <div class="container">
+                            <div className="container">
 
-                                <div class="row">
-                                  <div class="col"><h6>{props.dataItem["Display_Name"]}</h6></div>
+                                <div className="row">
+                                  <div className="col"><h6>{props.dataItem["Display_Name"]}</h6></div>
                                 </div>
-                                <div class="row">
+                                <div className="row">
                                 
-                                  <div class="col">E-Mail: {props.dataItem["Email_Address"]}</div>
+                                  <div className="col">E-Mail: {props.dataItem["Email_Address"]}</div>
                                   
-                                  <div class="col">Mobile: {props.dataItem["Office_Num"]}</div>
+                                  <div className="col">Mobile: {props.dataItem["Office_Num"]}</div>
                                 
                                 </div>
                             </div>
