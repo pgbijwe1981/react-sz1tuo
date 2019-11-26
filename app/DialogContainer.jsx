@@ -29,17 +29,16 @@ export default class DialogContaincer extends React.Component {
 
   render() {
       return (
-        <Dialog
-            onClose={this.props.cancel}
-        >
-            <form onSubmit={this.handleSubmit}>
+        <Dialog width={500} height={500}
+            onClose={this.props.cancel}>
+          
                 <div style={{ marginBottom: '1rem' }}>
                     <label>
                     Product Name<br />
                     <Input
                         type="text"
                         name="Email_Address"
-                        value={this.state.selectedEmployee.Email_Address}
+                        value={this.state.selectedEmployee.Display_Name}
                         onChange={this.onDialogInputChange}
                     />
                     </label>
@@ -65,7 +64,7 @@ export default class DialogContaincer extends React.Component {
                         Discontinued product
                     </label>
                 </div>
-            </form>
+           
             <DialogActionsBar>
                 <button
                     className="k-button"

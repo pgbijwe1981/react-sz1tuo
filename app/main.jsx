@@ -116,10 +116,12 @@ cancel = () => {
     }
 
 save = () => {
+  debugger;
         this.setState({ selectedEmployee: undefined });
     }
 
  edit = (dataItem) => {
+   debugger;
         this.setState({ selectedEmployee: this.cloneEmployee(dataItem) });
     }
 
@@ -146,7 +148,7 @@ save = () => {
               <GridColumn  field="Amcom_Name"  title='Search Employee'  filterable={true} 
                   cell={props => (
                   <td>
-                    <div className="container" onClick={this.edit}>
+                    <div className="container" onClick={() => { this.edit(props.dataItem); }}>
                     
                       <div className="row">
                           <div className="col-sm-3 p-2">
