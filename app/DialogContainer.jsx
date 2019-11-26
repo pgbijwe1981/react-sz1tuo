@@ -2,6 +2,7 @@
 import React from 'react';
 import { Dialog, DialogActionsBar } from '@progress/kendo-react-dialogs';
 import { Input, NumericTextBox } from '@progress/kendo-react-inputs';
+import "./assets/main.css"
 
 export default class DialogContaincer extends React.Component {
   constructor(props) {
@@ -31,7 +32,11 @@ export default class DialogContaincer extends React.Component {
       return (
         <Dialog width={500} height={500}
             onClose={this.props.cancel}>
-          
+                  <div className="row">
+                    <div className="col p-3">
+                      <img  src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss.png" className="rounded mx-auto d-block img-responsive" alt={this.state.selectedEmployee.Display_Name} />
+                    </div>
+                  </div>
                 <div style={{ marginBottom: '1rem' }}>
                     <label>
                     Product Name<br />
