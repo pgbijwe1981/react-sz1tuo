@@ -128,7 +128,7 @@ class App extends React.Component {
                   cell={props => (
 
 
-                    <div class="container">
+                    <div className="container">
                       <div class="row">
                           <div class="col-sm-3">
                             One of three columns
