@@ -116,12 +116,12 @@ cancel = () => {
     }
 
 save = () => {
-  debugger;
+
         this.setState({ selectedEmployee: undefined });
     }
 
  edit = (dataItem) => {
-   debugger;
+  
         this.setState({ selectedEmployee: this.cloneEmployee(dataItem) });
     }
 
