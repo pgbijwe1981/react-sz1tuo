@@ -26,6 +26,8 @@ import caGregorian from "cldr-dates-full/main/es/ca-gregorian.json";
 import dateFields from "cldr-dates-full/main/es/dateFields.json";
 import timeZoneNames from "cldr-dates-full/main/es/timeZoneNames.json";
 
+import "./assets/main.css"
+
 load(
   likelySubtags,
   currencyData,
@@ -111,7 +113,7 @@ class App extends React.Component {
     return (
 
           <div>
-            
+            <div className="text-center p-3"><h2>Information Systems Employee Directory</h2></div>
               <Grid
                 style={{ height: "700px" }}
                 filterable
@@ -126,9 +128,11 @@ class App extends React.Component {
 
               <GridColumn  field="Amcom_Name"  title='Search Employee'  
                   cell={props => (
-
+                    
+                    
 
                     <div className="container">
+                    
                       <div className="row">
                           <div className="col-sm-3 p-2">
                             <img src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss.png" class="rounded" alt="..." />
