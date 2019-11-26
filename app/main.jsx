@@ -99,6 +99,7 @@ class App extends React.Component {
     this.setState({ ...this.state });
   };
 
+
   _pdfExport;
   exportExcel = () => {
     this._export.save();
@@ -116,7 +117,7 @@ class App extends React.Component {
             <div className="text-center p-3"><h3>Information Systems Employee Directory</h3></div>
               <Grid
                 style={{ height: "700px" }}
-                filterable={{extra: false,operators:{string:{startswith:'startswith'}}}}
+                filterable
                 pageable={{ buttonCount: 5, pageSizes: true }}
                 data={this.state.dataResult}
                 {...this.state.dataState}
@@ -124,17 +125,15 @@ class App extends React.Component {
                 onExpandChange={this.expandChange}
               >
               
-
-              <GridColumn  field="Amcom_Name"  title='Search Employee'  
+  
+              <GridColumn  field="Amcom_Name"  title='Search Employee'  filterable={true} 
                   cell={props => (
-                    
-                    
-
+                  <td>
                     <div className="container">
                     
                       <div className="row">
                           <div className="col-sm-3 p-2">
-                            <img src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss.png" class="rounded" alt="..." />
+                            <img src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss.png" className="rounded" alt="..." />
                           </div>
 
                           <div className="col-sm-9 p-3">
@@ -156,7 +155,7 @@ class App extends React.Component {
                        
                       </div>
                     </div>
-
+                    </td>
                     )}
 
                  />
