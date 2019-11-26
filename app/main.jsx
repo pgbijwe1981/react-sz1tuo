@@ -113,7 +113,7 @@ class App extends React.Component {
     return (
 
           <div>
-            <div className="text-center p-3"><h2>Information Systems Employee Directory</h2></div>
+            <div className="text-center p-3"><h3>Information Systems Employee Directory</h3></div>
               <Grid
                 style={{ height: "700px" }}
                 filterable
