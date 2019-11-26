@@ -178,7 +178,7 @@ save = () => {
                  />
                
               </Grid>
-        {this.state.selectedEmployee && <DialogContainer dataItem={this.state.productInEdit} save={this.save} cancel={this.cancel}/>}
+        {this.state.selectedEmployee && <DialogContainer dataItem={this.state.selectedEmployee} save={this.save} cancel={this.cancel}/>}
             
           </div>
 

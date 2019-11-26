@@ -7,7 +7,7 @@ export default class DialogContaincer extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          productInEdit: this.props.dataItem || null
+          selectedEmployee: this.props.dataItem || null
       };
   }
   handleSubmit(event) {
@@ -39,7 +39,7 @@ export default class DialogContaincer extends React.Component {
                     <Input
                         type="text"
                         name="Email_Address"
-                        value={}
+                        value={this.state.selectedEmployee.Email_Address}
                         onChange={this.onDialogInputChange}
                     />
                     </label>
@@ -49,7 +49,7 @@ export default class DialogContaincer extends React.Component {
                     Units In Stock<br />
                     <NumericTextBox
                         name="UnitsInStock"
-                        value={ 0}
+                        value={ this.state.selectedEmployee.Email_Address}
                         onChange={this.onDialogInputChange}
                     />
                     </label>
@@ -59,7 +59,7 @@ export default class DialogContaincer extends React.Component {
                         <input
                             type="checkbox"
                             name="Discontinued"
-                            checked={false}
+                            checked={this.state.selectedEmployee.Email_Address || false}
                             onChange={this.onDialogInputChange}
                         />
                         Discontinued product
