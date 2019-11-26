@@ -130,11 +130,11 @@ class App extends React.Component {
 
                     <div className="container">
                       <div className="row">
-                          <div className="col-sm-3">
-                            One of three columns
+                          <div className="col-sm-3 p-2">
+                            <img src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss.png" class="rounded" alt="..." />
                           </div>
 
-                          <div className="col-sm-9">
+                          <div className="col-sm-9 p-3">
 
                             <div className="container">
 
