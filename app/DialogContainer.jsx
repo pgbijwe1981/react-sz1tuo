@@ -30,7 +30,7 @@ export default class DialogContaincer extends React.Component {
 
   render() {
       return (
-        <Dialog width={500} height={500}
+        <Dialog 
             onClose={this.props.cancel}>
                   <div className="row">
                     <div className="col p-3">
