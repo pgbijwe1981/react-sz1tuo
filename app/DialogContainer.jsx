@@ -28,61 +28,97 @@ export default class DialogContaincer extends React.Component {
       });
   }
 
+ callApi(){
+    // Github fetch library : https://github.com/github/fetch
+    // Call the API page
+    fetch('https://facebook.github.io/react-native/movies.json')
+    .then((result) => {
+      // Get the result
+      // If we want text, call result.text()
+      return result.json();
+    }).then((jsonResult) => {
+      // Do something with the result
+      console.log(jsonResult);
+    })
+  }
+
+sendText = (dataItem) => {
+        console.log('text sent ' + dataItem.Office_Num)
+               
+ fetch('https://facebook.github.io/react-native/movies.json')
+    .then((result) => {
+      // Get the result
+      // If we want text, call result.text()
+      return result.json();
+    }).then((jsonResult) => {
+      // Do something with the result
+      console.log(jsonResult);
+    })
+
+/*
+fetch('https://mywebsite.com/endpoint/', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    firstParam: 'yourValue',
+    secondParam: 'yourOtherValue',
+  }),
+});
+
+*/
+    }
+
+
+makeACall = (dataItem) => {
+    console.log('calling... ' + dataItem.Office_Num)
+}
+
+
   render() {
       return (
         <Dialog 
             onClose={this.props.cancel}>
-                  <div className="row">
-                    <div className="col p-3">
-                      <img  src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss.png" className="rounded mx-auto d-block img-responsive" alt={this.state.selectedEmployee.Display_Name} />
-                    </div>
+                <div className="row">
+                  <div className="col p-3">
+                    <img  src="https://cdn.jsdelivr.net/gh/pgbijwe1981/react-sz1tuo@master/boss128.png" className="rounded mx-auto d-block img-responsive" alt={this.state.selectedEmployee.Display_Name} />
                   </div>
-                <div style={{ marginBottom: '1rem' }}>
-                    <label>
-                    Product Name<br />
-                    <Input
-                        type="text"
-                        name="Email_Address"
-                        value={this.state.selectedEmployee.Display_Name}
-                        onChange={this.onDialogInputChange}
-                    />
-                    </label>
                 </div>
-                <div style={{ marginBottom: '1rem' }}>
-                    <label>
-                    Units In Stock<br />
-                    <NumericTextBox
-                        name="UnitsInStock"
-                        value={ this.state.selectedEmployee.Email_Address}
-                        onChange={this.onDialogInputChange}
-                    />
-                    </label>
+                <div className="row">
+                    <div className="col-sm-12 text-center"><h5>{this.state.selectedEmployee.Display_Name}</h5></div>
                 </div>
-                <div>
-                    <label>
-                        <input
-                            type="checkbox"
-                            name="Discontinued"
-                            checked={this.state.selectedEmployee.Email_Address || false}
-                            onChange={this.onDialogInputChange}
-                        />
-                        Discontinued product
-                    </label>
+                 <div className="row" style={{ marginBottom: '1rem' }}>
+                    <div className="col-sm-12 text-center">{this.state.selectedEmployee.Display_Department_Name}</div>
                 </div>
-           
+                <div className="row border-top p-3" style={{ marginLeft: '1rem', marginRight: '1rem' }}>
+                        <div className="col text-center">Email: {this.state.selectedEmployee.Email_Address}</div>
+                </div>
+                 <div className="row border-top p-3" style={{ marginLeft: '1rem', marginRight: '1rem' }}>
+                        <div className="col  text-center">Phone: {this.state.selectedEmployee.Office_Num}</div>
+                </div>
+
+ <button value="SendText"
+                    className="k-button"
+                    onClick={() => { this.sendText(this.state.selectedEmployee); }}
+                >
+                    Send Text
+                </button>
+ <button value="Call"
+                    className="k-button"
+                    onClick={() => { this.makeACall(this.state.selectedEmployee); }}
+                >
+                    Call
+                </button>
             <DialogActionsBar>
-                <button
+                <button value="Close"
                     className="k-button"
                     onClick={this.props.cancel}
                 >
-                    Cancel
+                    Close
                 </button>
-                <button
-                    className="k-button k-primary"
-                    onClick={this.props.save}
-                >
-                    Save
-                </button>
+                
             </DialogActionsBar>
         </Dialog>
     );
