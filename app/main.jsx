@@ -25,7 +25,7 @@ import currencies from "cldr-numbers-full/main/es/currencies.json";
 import caGregorian from "cldr-dates-full/main/es/ca-gregorian.json";
 import dateFields from "cldr-dates-full/main/es/dateFields.json";
 import timeZoneNames from "cldr-dates-full/main/es/timeZoneNames.json";
-
+import DialogContainer from './DialogContainer.jsx';
 import "./assets/main.css"
 
 load(
@@ -78,7 +78,8 @@ class App extends React.Component {
     this.state = {
       dataResult: process(employees, dataState),
       dataState: dataState,
-      currentLocale: this.locales[0]
+      currentLocale: this.locales[0],
+      selectedEmployee: undefined
     };
   }
 
@@ -110,6 +111,18 @@ class App extends React.Component {
     this._pdfExport.save();
   };
 
+cancel = () => {
+        this.setState({ selectedEmployee: undefined });
+    }
+
+ edit = (dataItem) => {
+        this.setState({ selectedEmployee: this.cloneEmployee(dataItem) });
+    }
+
+  cloneEmployee(empolyee) {
+        return Object.assign({}, empolyee);
+    }
+
   render() {
     return (
 
@@ -129,7 +142,7 @@ class App extends React.Component {
               <GridColumn  field="Amcom_Name"  title='Search Employee'  filterable={true} 
                   cell={props => (
                   <td>
-                    <div className="container">
+                    <div className="container" onClick={this.edit}>
                     
                       <div className="row">
                           <div className="col-sm-3 p-2">
@@ -161,7 +174,7 @@ class App extends React.Component {
                  />
                
               </Grid>
-        
+        {this.state.selectedEmployee && <DialogContainer dataItem={this.state.productInEdit} save={this.save} cancel={this.cancel}/>}
             
           </div>
 
