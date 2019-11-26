@@ -43,7 +43,8 @@ export default class DialogContaincer extends React.Component {
   }
 
 sendText = (dataItem) => {
-        console.log('text sent ' + dataItem.Office_Num)
+        
+        alert('Test sent to ' + dataItem.Office_Num +' !!!')
             
  fetch('https://facebook.github.io/react-native/movies.json')
     .then((result) => {
