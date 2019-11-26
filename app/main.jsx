@@ -115,6 +115,10 @@ cancel = () => {
         this.setState({ selectedEmployee: undefined });
     }
 
+save = () => {
+        this.setState({ selectedEmployee: undefined });
+    }
+
  edit = (dataItem) => {
         this.setState({ selectedEmployee: this.cloneEmployee(dataItem) });
     }
